@@ -19,7 +19,7 @@ export class XxxEntity {
     is_admin: number;
 
     @Column({
-        length: 500,
+        length: 10,
         comment: '名字'
     })
     name: string;
@@ -27,25 +27,7 @@ export class XxxEntity {
     @Column('text')
     description: string;
 
-    @Column()
-    filename: string;
-
-    @Column('int', {
-        nullable: false,
-        default: () => 1,
-        name: 'sort',
-        comment: '排序'
-    })
-    sort: number;
-
-    @Column('varchar', {
-        nullable: true,
-        length: 100,
-        name: 'url',
-        comment: 'url地址'
-    })
-    url: string | null;
-
+ 
     @Exclude() // 表示排除字段
     @Column('varchar', {
         nullable: false,

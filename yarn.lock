@@ -1518,6 +1518,13 @@ binary-extensions@^2.0.0:
   resolved "https://registry.npm.taobao.org/binary-extensions/download/binary-extensions-2.1.0.tgz#30fa40c9e7fe07dbc895678cd287024dea241dd9"
   integrity sha1-MPpAyef+B9vIlWeM0ocCTeokHdk=
 
+body-parser-xml@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npm.taobao.org/body-parser-xml/download/body-parser-xml-2.0.1.tgz#6d2facca56aa541f44600a279e2d9d08b56d97f3"
+  integrity sha1-bS+sylaqVB9EYAonni2dCLVtl/M=
+  dependencies:
+    xml2js "^0.4.23"
+
 body-parser@1.19.0:
   version "1.19.0"
   resolved "https://registry.npm.taobao.org/body-parser/download/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
@@ -5803,6 +5810,18 @@ supports-hyperlinks@^2.0.0:
   dependencies:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
+
+swagger-ui-dist@^3.18.1:
+  version "3.37.2"
+  resolved "https://registry.npm.taobao.org/swagger-ui-dist/download/swagger-ui-dist-3.37.2.tgz#b250ae8d0b3b5ee15b6eb7a53aa9b69cd5888ad3"
+  integrity sha1-slCujQs7XuFbbrelOqm2nNWIitM=
+
+swagger-ui-express@^4.1.5:
+  version "4.1.5"
+  resolved "https://registry.npm.taobao.org/swagger-ui-express/download/swagger-ui-express-4.1.5.tgz#114f3ce017ca6d6069d960ea8ffef677784b6f2f"
+  integrity sha1-EU884BfKbWBp2WDqj/72d3hLby8=
+  dependencies:
+    swagger-ui-dist "^3.18.1"
 
 symbol-observable@2.0.3:
   version "2.0.3"

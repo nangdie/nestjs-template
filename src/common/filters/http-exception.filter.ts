@@ -3,6 +3,8 @@ import {
     Catch,
     ExceptionFilter,
     HttpException,
+    Logger,
+    HttpStatus,
 } from '@nestjs/common';
 import * as dayjs from 'dayjs';
 
@@ -13,20 +15,26 @@ export class HttpExceptionFilter implements ExceptionFilter<HttpException> {
         const ctx = host.switchToHttp();			//获取状态信息
         const response = ctx.getResponse();
         const request = ctx.getRequest();
-        const status = exception.getStatus();
+        const status =
+            exception instanceof HttpException
+                ? exception.getStatus()
+                : HttpStatus.INTERNAL_SERVER_ERROR;
         const exceptionRes: any = exception.getResponse();
-        const {
-            error,
-            message,
-        } = exceptionRes;
+        const { error, message } = exceptionRes
 
-        // 返回的格式
-        response.status(status).json({
-            status,
+        const errorResponse = {
             timestamp: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+            message: message || exceptionRes,
             path: request.url,
+            status,
             error,
-            message,
-        });
+        }
+        Logger.error(
+            `[${dayjs().format('YYYY-MM-DD HH:mm:ss')}] ${request.method} ${request.url}`,
+            JSON.stringify(errorResponse),
+            'HttpExceptionFilter',
+        );
+
+        response.status(status).json(errorResponse);
     }
 }

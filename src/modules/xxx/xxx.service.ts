@@ -1,18 +1,21 @@
 import { Injectable } from '@nestjs/common';
-import { CreateXxxDto } from './dto/create.xxx.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { XxxEntity } from './xxx.entity';
+import { CreateUserDto } from './dto/create.user.dto';
 
 @Injectable()
 export class XxxService {
-    constructor(@InjectRepository(XxxEntity) private readonly xxxRepository: Repository<XxxEntity>, ) { }
-    
+    constructor(@InjectRepository(XxxEntity) private readonly xxxRepository: Repository<XxxEntity>) {
+
+    }
+
     get(id: string): string {
         return '使用了Get方法，传入ID为：' + id
     }
-    create(body: CreateXxxDto): string {
-        return '使用了post请求，传入内容' + JSON.stringify(body)
+    create(body: CreateUserDto): any {
+        return this.xxxRepository.create(body)
+
     }
 
     query(): Promise<any> {
