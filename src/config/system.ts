@@ -4,6 +4,11 @@ const system = {
     supportImgTypes: ['.png', '.jpg', '.gif', '.jpeg'],     //支持的图片
     defaultAccount: 'admin',    // 默认账号
     defaultPassword: '123456',  // 默认密码
+    returnFormat: {
+        result: 'result',
+        code: 'code',
+        message: 'message'
+    }
 }
 
 export default system

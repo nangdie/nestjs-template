@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Body, Post } from '@nestjs/common';
 import { XxxService } from './xxx.service';
 import { CreateXxxDto } from './dto/create.xxx.dto';
+import { IpAddress } from 'src/common/decorators/ip.address';
 
 @Controller('xxx')
 export class XxxController {
@@ -9,10 +10,11 @@ export class XxxController {
     ) { }
 
     @Get('all')
-    query() {   // 查询数据库
+    query(@IpAddress() ip: string) {   // 查询数据库
+        console.log('访问者IP：',ip)
         return this.xxxService.query()
     }
-    
+
     // 处理前端传过来的数据
     @Get(':id')
     get(@Param('id') id: string): string {
@@ -20,7 +22,7 @@ export class XxxController {
     }
 
     @Post()
-    create(@Body() body: CreateXxxDto): string {
+    create(@Body() body: CreateXxxDto, @IpAddress() ip: string): string {
         return this.xxxService.create(body)
     }
 }

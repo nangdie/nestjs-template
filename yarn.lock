@@ -2028,11 +2028,6 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-crypto@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/crypto/download/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
-  integrity sha1-KvG3ytgXXSTIobB3glV5SiGAMDc=
-
 cssom@^0.4.4:
   version "0.4.4"
   resolved "https://registry.npm.taobao.org/cssom/download/cssom-0.4.4.tgz#5a66cf93d2d0b661d80bf6a44fb65f5c2e4e0a10"
@@ -2065,6 +2060,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+dayjs@^1.9.7:
+  version "1.9.7"
+  resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.9.7.tgz?cache=0&sync_timestamp=1607178419047&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdayjs%2Fdownload%2Fdayjs-1.9.7.tgz#4b260bb17dceed2d5f29038dfee03c65a6786fc0"
+  integrity sha1-SyYLsX3O7S1fKQON/uA8ZaZ4b8A=
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
@@ -2584,6 +2584,11 @@ expect@^26.6.2:
     jest-message-util "^26.6.2"
     jest-regex-util "^26.0.0"
 
+express-rate-limit@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.npm.taobao.org/express-rate-limit/download/express-rate-limit-5.2.3.tgz#ae73b3dc723decd697797611bd96e9b34a912f6c"
+  integrity sha1-rnOz3HI97NaXeXYRvZbps0qRL2w=
+
 express@4.17.1:
   version "4.17.1"
   resolved "https://registry.npm.taobao.org/express/download/express-4.17.1.tgz?cache=0&sync_timestamp=1599054274660&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fexpress%2Fdownload%2Fexpress-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -3095,6 +3100,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+helmet@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.npm.taobao.org/helmet/download/helmet-4.2.0.tgz#e81f5613cc1c90402af581794dc9878ad078b237"
+  integrity sha1-6B9WE8wckEAq9YF5TcmHitB4sjc=
+
 highlight.js@^10.0.0:
   version "10.4.1"
   resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-10.4.1.tgz#d48fbcf4a9971c4361b3f95f302747afe19dbad0"
@@ -3458,6 +3468,11 @@ is-wsl@^2.2.0:
   integrity sha1-dKTHbnfKn9P5MvKQwX6jJs0VcnE=
   dependencies:
     is-docker "^2.0.0"
+
+is_js@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.npm.taobao.org/is_js/download/is_js-0.9.0.tgz#0ab94540502ba7afa24c856aa985561669e9c52d"
+  integrity sha1-CrlFQFArp6+iTIVqqYVWFmnpxS0=
 
 isarray@0.0.1:
   version "0.0.1"
@@ -4437,13 +4452,6 @@ nice-try@^1.0.4:
   resolved "https://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha1-ozeKdpbOfSI+iPybdkvX7xCJ42Y=
 
-node-auth0@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.npm.taobao.org/node-auth0/download/node-auth0-0.0.7.tgz#d7817f0b9171bdbd43ff16d2f524d899c56f7105"
-  integrity sha1-14F/C5Fxvb1D/xbS9STYmcVvcQU=
-  dependencies:
-    crypto "^1.0.1"
-
 node-emoji@1.10.0:
   version "1.10.0"
   resolved "https://registry.npm.taobao.org/node-emoji/download/node-emoji-1.10.0.tgz#8886abd25d9c7bb61802a658523d1f8d2a89b2da"
@@ -5108,6 +5116,13 @@ repeat-string@^1.6.1:
   version "1.6.1"
   resolved "https://registry.npm.taobao.org/repeat-string/download/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
+
+request-ip@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.npm.taobao.org/request-ip/download/request-ip-2.1.3.tgz#99ab2bafdeaf2002626e28083cb10597511d9e14"
+  integrity sha1-masrr96vIAJibigIPLEFl1EdnhQ=
+  dependencies:
+    is_js "^0.9.0"
 
 request-promise-core@1.1.4:
   version "1.1.4"
