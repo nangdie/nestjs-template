@@ -2028,6 +2028,11 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
+crypto@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/crypto/download/crypto-1.0.1.tgz#2af1b7cad8175d24c8a1b0778255794a21803037"
+  integrity sha1-KvG3ytgXXSTIobB3glV5SiGAMDc=
+
 cssom@^0.4.4:
   version "0.4.4"
   resolved "https://registry.npm.taobao.org/cssom/download/cssom-0.4.4.tgz#5a66cf93d2d0b661d80bf6a44fb65f5c2e4e0a10"
@@ -4431,6 +4436,13 @@ nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/nice-try/download/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha1-ozeKdpbOfSI+iPybdkvX7xCJ42Y=
+
+node-auth0@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.npm.taobao.org/node-auth0/download/node-auth0-0.0.7.tgz#d7817f0b9171bdbd43ff16d2f524d899c56f7105"
+  integrity sha1-14F/C5Fxvb1D/xbS9STYmcVvcQU=
+  dependencies:
+    crypto "^1.0.1"
 
 node-emoji@1.10.0:
   version "1.10.0"
