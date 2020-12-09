@@ -21,6 +21,12 @@ nestjs模板构建、使用教程、功能的实现与封装
 - [x] pipe管道转换参数类型（转换前端传递的值）
 
 ......
+
+关联文档
+• 语雀
+• Github
+• 喜欢的可以点个star 、收藏什么的，不迷路还可以接收更新信息
+
 ## 1. 安装启动项目
 ```git
 npm i -g @nestjs/cli
@@ -338,9 +344,3 @@ yarn start:dev
 1. 构建路由常用四件套 [** controller + module + entity + service **]
 1. **JWT** 或者**session** 登陆/注册
 1. 守卫验证权限
-## 关联文档
-
-
-- [语雀](https://www.yuque.com/nangdie/datrmc)
-- [Github](https://github.com/nangdie/nestjs-template)
-- 喜欢的可以点个star 、收藏什么的，不迷路还可以接收更新信息
