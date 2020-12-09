@@ -4,8 +4,6 @@ import { ConfigModule, ConfigService } from 'nestjs-config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { XxxService } from './modules/xxx/xxx.service';
-import { XxxController } from './modules/xxx/xxx.controller';
 import { XxxModule } from './modules/xxx/xxx.module';
 
 
@@ -18,7 +16,20 @@ import { XxxModule } from './modules/xxx/xxx.module';
     }),
     XxxModule
   ],
-  controllers: [AppController, XxxController],
-  providers: [AppService, XxxService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule { }
+
+// implements NestModule {
+//   configure(consumer: MiddlewareConsumer) {
+//     consumer.apply(LoggerMiddleware)
+//       // 不监听的路由
+//       .exclude()
+//       // 需要监听的路由
+//       .forRoutes({
+//         path: '*',
+//         method: RequestMethod.ALL
+//       })
+//   }
+// }
