@@ -22,10 +22,9 @@ nestjs模板构建、使用教程、功能的实现与封装
 
 ......
 
-关联文档
-• 语雀
-• Github
-• 喜欢的可以点个star 、收藏什么的，不迷路还可以接收更新信息
+- [语雀](https://www.yuque.com/nangdie/datrmc)
+- [Github](https://github.com/nangdie/nestjs-template)
+- 喜欢的可以点个star 、收藏什么的，不迷路还可以接收更新信息。动力满满
 
 ## 1. 安装启动项目
 ```git
