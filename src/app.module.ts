@@ -7,7 +7,13 @@ import { AppService } from './app.service';
 
 
 @Module({
-  imports: [],
+  imports: [
+    ConfigModule.load(resolve(__dirname, 'config', '**/!(*.d).{ts,js}')),
+    TypeOrmModule.forRootAsync({
+      useFactory: (config: ConfigService) => config.get('database'),
+      inject: [ConfigService],
+    })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
