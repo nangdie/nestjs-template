@@ -1,6 +1,5 @@
 # nestjs-template
 nestjs模板构建、使用教程、功能的实现与封装
-# 开始使用Nest.js (完整源码移步Github)
 
 > 前提需要安装Node.js环境
 
