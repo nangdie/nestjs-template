@@ -1,0 +1,27 @@
+type Mutation {
+    createXxx(xxx: XxxInput!): XxxData
+}
+
+type Query {
+    findOneXxx(id:Int): GraphData
+}
+
+input XxxInput {
+    name: String
+    is_admin: Int
+    description:String
+    password:String
+}
+
+type Xxx {
+    id: Int
+    name: String
+    is_admin: Int
+    description:String
+}
+
+type XxxData {
+    code: Int,
+    result:Xxx,
+    message:String
+}

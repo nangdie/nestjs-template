@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  updateUser(input: UpdateUserInput!): ResultUserModel!
+}
+
+type Query {
+  getAnnouncements(id: ID!): UserModel!
+}
+
+type ResultUserModel {
+  code: Float!
+  message: String!
+  result: UserModel!
+}
+
+input UpdateUserInput {
+  address: String
+  age: Float
+  name: String
+}
+
+type UserModel {
+  address: String!
+  age: Float!
+  id: ID!
+  name: String!
+}

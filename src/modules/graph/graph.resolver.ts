@@ -15,10 +15,23 @@ export class GraphResolver {
 
     // 查询
     @Query('findOneGraph')
-    findOneCat(@Args('id') id: number): Promise<any> {
+    findOneCat(@Args('id') id: number): Promise<Graph> {
         return this.graphService.findOneGraph(id)
     }
 
-   
-
 }
+
+
+// type Author {
+//     id: Int!
+//     firstName: String
+//     lastName: String
+//     posts: [Post]
+// }
+
+
+// input UpdateUserInput {
+//     name: String
+//     age: Int
+//     address: String
+// }

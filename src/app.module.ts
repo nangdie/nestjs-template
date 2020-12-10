@@ -6,8 +6,9 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { XxxModule } from './modules/xxx/xxx.module';
-import { CatModule } from './modules/cat/cat.module';
-import { GraphModule } from './modules/graph/graph.module';
+// import { GraphModule } from './modules/graph/graph.module';
+import { UsersModule } from './modules/user/user.module';
+
 
 
 
@@ -23,11 +24,12 @@ import { GraphModule } from './modules/graph/graph.module';
       inject: [ConfigService],
     }),
     XxxModule,
-    CatModule,
-    GraphModule
+    // GraphModule,
+    UsersModule
   ],
   controllers: [AppController],
   providers: [AppService],
+
 })
 export class AppModule { }
 

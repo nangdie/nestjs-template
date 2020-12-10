@@ -39,6 +39,7 @@ async function bootstrap() {
       max: 500, // 限制15分钟内最多只能访问500次
     }),
   );
+
   app.use(bodyParser.xml({
     limit: '1MB',   // 拒绝大于1 MB的有效负载
     xmlParseOptions: {
