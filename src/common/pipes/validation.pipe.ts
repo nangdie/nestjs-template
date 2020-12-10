@@ -1,11 +1,4 @@
-import {
-    ArgumentMetadata,
-    HttpException,
-    HttpStatus,
-    Injectable,
-    PipeTransform,
-    Type,
-} from '@nestjs/common';
+import { ArgumentMetadata, HttpException, HttpStatus, Injectable, PipeTransform, Type, } from '@nestjs/common';
 import { plainToClass } from 'class-transformer';
 import { validate } from 'class-validator';
 
@@ -17,14 +10,15 @@ export class ValidationPipe implements PipeTransform<any> {
         const object = plainToClass(metatype, value);
         const errors = await validate(object);
         if (errors.length > 0) {
-            const errObj = {};
-            errors.forEach(err => {
-                const {
-                    property,
-                    constraints,
-                } = err;
-                errObj[property] = Object.values(constraints);
-            });
+            // const errObj = {};
+            // errors.forEach(err => {
+            //     const {
+            //         property,
+            //         constraints,
+            //     } = err;
+            //     errObj[property] = Object.values(constraints);
+            // });
+            const errObj = Object.values(errors[0].constraints)[0];
             throw new HttpException(
                 { message: '请求参数验证失败 ', error: errObj },
                 HttpStatus.BAD_REQUEST,

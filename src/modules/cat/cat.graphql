@@ -1,0 +1,30 @@
+
+#import './../cat/cat'
+
+type Query {
+    findOneCat(id: Int!): Cat
+    findCats:Data
+}
+
+type Mutation {
+    createCat(cat: CatInput!): Cat
+    deleteCat(id: Int!): Cat
+    updateCat(id: Int!, cat: CatInput): Cat
+}
+
+type Cat {
+    id: Int
+    nickname: String
+    species: String
+}
+
+input CatInput {
+    nickname: String
+    species: String
+}
+
+type Data {
+    code: Int,
+    result:[Cat],
+    message:String
+}

@@ -14,11 +14,11 @@ const bodyParser = require('body-parser');
 require('body-parser-xml')(bodyParser);
 
 const PORT = process.env.PORT || 3000;
-const Prefix = 'api'
-
+const PREFIX = 'api'
+const SWAGGER_V1 = `${PREFIX}/v1/swagger`
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.setGlobalPrefix(Prefix);
+  app.setGlobalPrefix(PREFIX);
 
   const options = new DocumentBuilder()  // 创建并配置文档信息
     .setTitle('标题')
@@ -27,7 +27,7 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   // 会自动将所有路由显示出来
-  SwaggerModule.setup('api/v1/swagger', app, document); // api/swagger = API文档的路径，访问：http://localhost:3000/api/swagger
+  SwaggerModule.setup(SWAGGER_V1, app, document); // api/swagger = API文档的路径，访问：http://localhost:3000/api/swagger
 
   // 跨域资源共享
   app.enableCors()
@@ -49,7 +49,7 @@ async function bootstrap() {
   }));
 
   // web安全
-  app.use(helmet())
+  // app.use(helmet())
 
   // 拦截处理-错误异常
   app.useGlobalFilters(new HttpExceptionFilter());
@@ -67,7 +67,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(PORT, () => {
-    Logger.log(`已启动，请访问： http://localhost:${PORT}/${Prefix}`);
+    Logger.log(`已启动，接口： http://localhost:${PORT}/${PREFIX} ， API文档：http://localhost:${PORT}/${SWAGGER_V1}`);
   });
 
 }

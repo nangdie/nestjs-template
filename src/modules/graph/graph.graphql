@@ -1,0 +1,26 @@
+type Mutation {
+    createGraph(graph: GraphInput!): GraphData
+}
+
+type Query {
+    findOneGraph(id:Int): GraphData
+}
+
+input GraphInput {
+    name: String
+    age: Int
+    address:String
+}
+
+type Graph {
+    id: Int
+    name: String
+    age: Int
+    address:String
+}
+
+type GraphData {
+    code: Int,
+    result:Graph,
+    message:String
+}

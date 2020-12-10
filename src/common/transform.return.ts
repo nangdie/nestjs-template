@@ -11,15 +11,21 @@ const transformValue = (result: any, code: number = 0, message: string = '请求
         [returnFormat.result]: classToPlain(result),
         [returnFormat.code]: code,
         [returnFormat.message]: message,
-
     }
-
 }
 
 // 处理统一成功返回值
 @Injectable()
 export class TransformReturnInterceptor implements NestInterceptor {
-    intercept(_: ExecutionContext, next: CallHandler): Observable<any> {
+    intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+        const host = context.switchToHttp();
+        const request = host.getRequest();
+
+        // 不需要格式化的接口
+        if (['/api/status'].includes(request && request.url)) {
+            return next.handle();
+        }
+
         return next.handle().pipe(map(transformValue))
     }
 }
