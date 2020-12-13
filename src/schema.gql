@@ -2,24 +2,76 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type authModule {
+  """年龄"""
+  age: Float
+
+  """用户ID"""
+  id: String
+
+  """姓名"""
+  name: String
+}
+
+input CreateUserInput {
+  """地址"""
+  address: String
+
+  """年龄"""
+  age: Float!
+
+  """用户名"""
+  name: String = "zhangsan"
+
+  """用户密码"""
+  password: String!
+}
+
+input LoginInputDto {
+  """用户名"""
+  name: String = "123456"
+
+  """用户名"""
+  password: String = "user"
+}
+
+input ModifyUserPwdInput {
+  id: String!
+  newPassword: String!
+  password: String!
+}
+
 type Mutation {
-  updateUser(input: UpdateUserInput!): ResultUserModel!
+  createUser(input: CreateUserInput!): ResultUserModel!
+  login(input: LoginInputDto!): ResultAuthToken!
+  modifyPassword(input: ModifyUserPwdInput!): ResultUserModel!
 }
 
 type Query {
-  getAnnouncements(id: ID!): UserModel!
+  getAnnouncements(id: ID!): ResultUserModel!
+  getProfile: ResultAuthModule!
+}
+
+type ResultAuth {
+  access_token: String!
+}
+
+type ResultAuthModule {
+  code: Float!
+  message: String!
+  result: authModule!
+}
+
+type ResultAuthToken {
+  code: Float!
+  message: String!
+  result: ResultAuth!
 }
 
 type ResultUserModel {
   code: Float!
   message: String!
   result: UserModel!
-}
-
-input UpdateUserInput {
-  address: String
-  age: Float
-  name: String
 }
 
 type UserModel {

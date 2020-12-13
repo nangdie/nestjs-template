@@ -9,6 +9,7 @@ import { LoggerGlobal } from './common/logger.middleware';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { TransformReturnInterceptor } from './common/transform.return';
 import { ValidationPipe } from './common/pipes/validation.pipe';
+import { GraphQLExceptionFilter } from './common/graqhql-exception.filter';
 
 const bodyParser = require('body-parser');
 require('body-parser-xml')(bodyParser);
@@ -53,6 +54,8 @@ async function bootstrap() {
   // app.use(helmet())
 
   // 拦截处理-错误异常
+  // graphQL专属异常过滤
+  // app.useGlobalFilters(new GraphQLExceptionFilter());
   app.useGlobalFilters(new HttpExceptionFilter());
 
   // 拦截处理-返回格式

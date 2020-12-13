@@ -6,7 +6,7 @@ const database: TypeOrmModuleOptions = {
   host: 'localhost',
   port: 3306,
   username: 'root',
-  password: 'mysql',
+  password: 'root',
   database: 'nest',
   entities: [join(__dirname, '../', '**/**.entity{.ts,.js}')], //自动检测包含entity的文件，并引入
   synchronize: true,

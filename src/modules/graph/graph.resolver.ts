@@ -1,5 +1,6 @@
 import { Resolver, Mutation, Args, Query } from '@nestjs/graphql';
-import { Inject, Controller } from '@nestjs/common';
+import { Inject, Controller, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { Graph } from './graph.entity';
 import { GraphService } from './graph.service';
 

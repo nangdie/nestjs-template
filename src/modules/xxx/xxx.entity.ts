@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert } from 'typeorm';
 import { Exclude, Expose } from 'class-transformer';
+import bcrypt from 'bcrypt'
 import { PublicEntity } from 'src/common/public.entity';
 
 // name 填入表名称，会自动创建这个表
@@ -33,15 +34,16 @@ export class XxxEntity extends PublicEntity {
   })
   password: string;
 
+
   // 插入数据库前先给密码加密
   @BeforeInsert()
   public makePassword() {
-    // this.password = makePassword(this.password)
+    return bcrypt.hashSync(this.password, 10)
   }
 
-  // 检查密码是否正确
-  public checkPassword(password: string, sqlPassword: string) {
-    // return checkPassword(password, sqlPassword);
+  // 密码与数据库是否一致
+  public isValidPassword(password: string): boolean {
+    return bcrypt.compareSync(password, this.password)
   }
 
   // 重新定义返回数据结构, 注意: 会导致上面的Exclude和Expose失效 !!!

@@ -22,7 +22,7 @@ export class TransformReturnInterceptor implements NestInterceptor {
         const request = host.getRequest();
 
         // 不需要格式化的接口
-        if (['/api/status'].includes(request && request.url)) {
+        if (['/api/status'].includes(request?.url)) {
             return next.handle();
         }
 

@@ -13,6 +13,7 @@ export class UserModel {
 
   @Field()
   public readonly address: string
+
 }
 
 @ObjectType()
@@ -22,7 +23,7 @@ export class ResultUserModel {
 
   @Field()
   public readonly code: number
- 
+
   @Field()
   public readonly message: string
 
